@@ -71,12 +71,12 @@ const Hero = () => {
         
         <div className="md:w-1/2 flex justify-center md:justify-end">
           <div className="relative">
-            <!-- AI-themed profile container -->
+            {/* AI-themed profile container */}
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-portfolio-cyan to-portfolio-pink p-[2px] animate-float relative">
               <div className="w-full h-full rounded-full bg-portfolio-background flex items-center justify-center overflow-hidden p-2 relative">
                 <div className="absolute inset-0 z-0">
                   <div className="w-full h-full opacity-20">
-                    <!-- Binary pattern background -->
+                    {/* Binary pattern background */}
                     <svg className="w-full h-full" viewBox="0 0 100 100">
                       <text x="8" y="8" fill="currentColor" className="text-portfolio-cyan text-[2px]">
                         {Array(600).fill().map((_, i) => Math.round(Math.random())).join('')}
@@ -101,13 +101,13 @@ const Hero = () => {
                 </div>
               </div>
               
-              <!-- Decorative circles -->
+              {/* Decorative circles */}
               <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-portfolio-cyan animate-pulse"></div>
               <div className="absolute bottom-6 -left-4 w-6 h-6 rounded-full bg-portfolio-pink animate-pulse" style={{ animationDelay: '0.5s' }}></div>
               <div className="absolute top-12 -right-6 w-8 h-8 rounded-full border-2 border-portfolio-cyanLight opacity-50"></div>
             </div>
             
-            <!-- Decorative elements -->
+            {/* Decorative elements */}
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-portfolio-card py-2 px-4 rounded-full flex items-center gap-2 border border-portfolio-cyan/20">
               <span className="inline-block w-2 h-2 rounded-full bg-portfolio-cyan animate-pulse"></span>
               <span className="text-xs text-portfolio-muted">AI Processing</span>
