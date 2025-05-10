@@ -70,8 +70,8 @@ export default {
 					cyan: '#00bcd4',
 					pink: '#ff79c6',
 					cyanLight: '#8be9fd',
-					text: '#f5f5f5',
-					muted: '#b0b0b0',
+					text: '#ffffff', // Changed from #f5f5f5 to pure white
+					muted: '#ffffff', // Changed from #b0b0b0 to white
 				}
 			},
 			fontFamily: {

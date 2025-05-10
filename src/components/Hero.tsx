@@ -15,12 +15,12 @@ const Hero = () => {
             <span className="text-sm font-medium">AI & Machine Learning</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             <span className="block">Hi, I'm</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-portfolio-cyan to-portfolio-pink">Vivek Pal</span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl font-medium text-portfolio-muted">
+          <h2 className="text-2xl md:text-3xl font-medium text-white">
             Turning Real-World Challenges Into 
             <span className="relative ml-2">
               <span className="text-portfolio-cyan">Elegant AI Solutions</span>
@@ -28,7 +28,7 @@ const Hero = () => {
             </span>
           </h2>
           
-          <p className="text-lg text-portfolio-muted max-w-2xl">
+          <p className="text-lg text-white max-w-2xl">
             AI & ML student at University School of Automation & Robotics, Delhi. 
             Passionate about solving complex problems with innovative technology solutions.
           </p>
@@ -53,7 +53,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="hidden md:flex items-center gap-6 text-portfolio-muted">
+          <div className="hidden md:flex items-center gap-6 text-white">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-portfolio-cyan"></div>
               <span className="text-sm">AI Algorithms</span>
@@ -97,7 +97,7 @@ const Hero = () => {
                     <Brain size={32} className="text-portfolio-cyan mx-auto" />
                   </div>
                   <p className="text-portfolio-cyan text-sm font-semibold">Profile Picture</p>
-                  <p className="text-portfolio-muted text-xs mt-2">Add your photo here</p>
+                  <p className="text-white text-xs mt-2">Add your photo here</p>
                 </div>
               </div>
               
@@ -110,7 +110,7 @@ const Hero = () => {
             {/* Decorative elements */}
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-portfolio-card py-2 px-4 rounded-full flex items-center gap-2 border border-portfolio-cyan/20">
               <span className="inline-block w-2 h-2 rounded-full bg-portfolio-cyan animate-pulse"></span>
-              <span className="text-xs text-portfolio-muted">AI Processing</span>
+              <span className="text-xs text-white">AI Processing</span>
             </div>
           </div>
         </div>
