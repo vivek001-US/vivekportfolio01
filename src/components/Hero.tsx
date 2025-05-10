@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import ParticlesBackground from './ParticlesBackground';
 import { Bot, Brain, Sparkles } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   return (
@@ -71,34 +72,22 @@ const Hero = () => {
         
         <div className="md:w-1/2 flex justify-center md:justify-end">
           <div className="relative">
-            {/* AI-themed profile container */}
+            {/* Profile picture with circular mask */}
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-portfolio-cyan to-portfolio-pink p-[2px] animate-float relative">
-              <div className="w-full h-full rounded-full bg-portfolio-background flex items-center justify-center overflow-hidden p-2 relative">
-                <div className="absolute inset-0 z-0">
-                  <div className="w-full h-full opacity-20">
-                    {/* Binary pattern background */}
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <text x="8" y="8" fill="currentColor" className="text-portfolio-cyan text-[2px]">
-                        {Array(600).fill().map((_, i) => Math.round(Math.random())).join('')}
-                      </text>
-                      <text x="8" y="11" fill="currentColor" className="text-portfolio-cyan text-[2px]">
-                        {Array(600).fill().map((_, i) => Math.round(Math.random())).join('')}
-                      </text>
-                      {Array(45).fill().map((_, i) => (
-                        <text key={i} x="8" y={14 + i * 3} fill="currentColor" className="text-portfolio-cyan text-[2px]">
-                          {Array(600).fill().map((_, j) => Math.round(Math.random())).join('')}
-                        </text>
-                      ))}
-                    </svg>
-                  </div>
-                </div>
-                <div className="z-10 text-center">
-                  <div className="mb-3">
-                    <Brain size={32} className="text-portfolio-cyan mx-auto" />
-                  </div>
-                  <p className="text-portfolio-cyan text-sm font-semibold">Profile Picture</p>
-                  <p className="text-white text-xs mt-2">Add your photo here</p>
-                </div>
+              <div className="w-full h-full rounded-full bg-portfolio-background flex items-center justify-center overflow-hidden p-2">
+                <Avatar className="w-full h-full">
+                  <AvatarImage 
+                    src="https://i.postimg.cc/mgdk88SQ/Whats-App-Image-2025-05-11-at-1-16-16-AM.jpg" 
+                    alt="Vivek Pal" 
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="bg-portfolio-background text-portfolio-cyan">
+                    <div className="flex flex-col items-center justify-center">
+                      <Brain size={32} className="mb-2" />
+                      VP
+                    </div>
+                  </AvatarFallback>
+                </Avatar>
               </div>
               
               {/* Decorative circles */}
@@ -110,7 +99,7 @@ const Hero = () => {
             {/* Decorative elements */}
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-portfolio-card py-2 px-4 rounded-full flex items-center gap-2 border border-portfolio-cyan/20">
               <span className="inline-block w-2 h-2 rounded-full bg-portfolio-cyan animate-pulse"></span>
-              <span className="text-xs text-white">AI Processing</span>
+              <span className="text-xs text-white">AI Engineer</span>
             </div>
           </div>
         </div>
