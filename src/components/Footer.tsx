@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
           <div className="flex space-x-6">
             <a
-              href="https://github.com/"
+              href="https://github.com/vivek001-US"
               target="_blank"
               rel="noopener noreferrer"
               className="text-portfolio-muted hover:text-portfolio-cyan transition-colors"
