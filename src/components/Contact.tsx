@@ -1,10 +1,12 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Linkedin, Phone } from 'lucide-react';
+import { Mail, Linkedin, Phone, Github, MapPin, Calendar } from 'lucide-react';
+
 const Contact = () => {
   const {
     toast
@@ -15,6 +17,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -25,6 +28,7 @@ const Contact = () => {
       [name]: value
     }));
   };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -43,23 +47,48 @@ const Contact = () => {
       });
     }, 1000);
   };
-  const contactInfo = [{
-    icon: <Mail className="h-6 w-6" />,
-    title: "Email",
-    value: "palvivek0882@gmail.com",
-    link: "mailto:palvivek0882@gmail.com"
-  }, {
-    icon: <Linkedin className="h-6 w-6" />,
-    title: "LinkedIn",
-    value: "Vivek Pal",
-    link: "https://www.linkedin.com/in/vivek-pal-525052336"
-  }, {
-    icon: <Phone className="h-6 w-6" />,
-    title: "Phone",
-    value: "Contact via email first",
-    link: null
-  }];
-  return <section id="contact" className="py-20">
+  
+  const contactInfo = [
+    {
+      icon: <Mail className="h-6 w-6" />,
+      title: "Email",
+      value: "palvivek0882@gmail.com",
+      link: "mailto:palvivek0882@gmail.com"
+    }, 
+    {
+      icon: <Linkedin className="h-6 w-6" />,
+      title: "LinkedIn",
+      value: "Vivek Pal",
+      link: "https://www.linkedin.com/in/vivek-pal-525052336"
+    },
+    {
+      icon: <Github className="h-6 w-6" />,
+      title: "GitHub",
+      value: "vivek001-US",
+      link: "https://github.com/vivek001-US"
+    },
+    {
+      icon: <Phone className="h-6 w-6" />,
+      title: "Phone",
+      value: "+1 (123) 456-7890",
+      link: "tel:+11234567890"
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      title: "Location",
+      value: "San Francisco, CA",
+      link: null
+    },
+    {
+      icon: <Calendar className="h-6 w-6" />,
+      title: "Availability",
+      value: "Monday-Friday, 9am-5pm PST",
+      link: null
+    }
+  ];
+  
+  return (
+    <section id="contact" className="py-20">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
@@ -97,23 +126,31 @@ const Contact = () => {
           </Card>
 
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            {contactInfo.map((item, index) => <Card key={index} className="bg-portfolio-card border-none shadow-lg card-hover">
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+            {contactInfo.map((item, index) => (
+              <Card key={index} className="bg-portfolio-card border-none shadow-lg card-hover">
                 <CardContent className="p-6 flex items-center gap-4">
                   <div className="bg-portfolio-background/30 p-3 rounded-lg">
                     {item.icon}
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">{item.title}</h4>
-                    {item.link ? <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-portfolio-cyan hover:underline">
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-portfolio-cyan hover:underline">
                         {item.value}
-                      </a> : <p className="text-portfolio-muted">{item.value}</p>}
+                      </a>
+                    ) : (
+                      <p className="text-portfolio-muted">{item.value}</p>
+                    )}
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
