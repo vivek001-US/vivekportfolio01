@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Code } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,6 +22,15 @@ const Footer = () => {
             >
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
+            </a>
+            <a
+              href="https://leetcode.com/u/vivekpal01/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-portfolio-muted hover:text-portfolio-cyan transition-colors"
+            >
+              <Code className="h-5 w-5" />
+              <span className="sr-only">LeetCode</span>
             </a>
             <a
               href="https://www.linkedin.com/in/vivek-pal-525052336"
