@@ -88,7 +88,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Delhi, India",
       link: null
     },
     {
