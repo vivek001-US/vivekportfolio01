@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Linkedin, Phone, Github, MapPin, Calendar, Code, Globe } from 'lucide-react';
+import { Mail, Linkedin, Phone, Github, MapPin, Code, Globe } from 'lucide-react';
 
 const Contact = () => {
   const {
@@ -89,12 +89,6 @@ const Contact = () => {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
       value: "Delhi, India",
-      link: null
-    },
-    {
-      icon: <Calendar className="h-6 w-6" />,
-      title: "Availability",
-      value: "Monday-Friday, 9am-5pm PST",
       link: null
     }
   ];
