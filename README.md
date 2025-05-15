@@ -1,4 +1,4 @@
-# Welcome to portfolio
+# Welcome to your Lovable project
 
 ## Project info
 
