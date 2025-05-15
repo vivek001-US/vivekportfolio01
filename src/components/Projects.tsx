@@ -1,15 +1,26 @@
 
+import { useState } from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Code } from 'lucide-react';
+import { Code, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Projects = () => {
+  // State to track which project details are expanded
+  const [expandedProjects, setExpandedProjects] = useState<number[]>([]);
+
+  // Toggle project expansion
+  const toggleProjectDetails = (index: number) => {
+    setExpandedProjects(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
   const projects = [
     {
       title: "Data-Driven Estimation of Obesity Risk",
       description: "ML model for health risk prediction that analyzes personal health data to estimate obesity risk factors.",
       tags: ["Machine Learning", "Health Tech", "Data Analysis"],
       icon: "🧠",
-      details: ""
+      details: "Obesity is a major health issue affecting individuals across all age groups. Traditional methods for determining obesity levels often rely on BMI or clinical diagnoses, which may not consider a person's lifestyle comprehensively. With the growing availability of data, machine learning provides a powerful approach to model and predict obesity levels from behavioral and physiological indicators. This project utilizes various machine learning algorithms to classify and predict obesity levels from data collected on dietary habits, physical activity, and other lifestyle factors."
     }, 
     {
       title: "Embedded Line Detection Robot",
@@ -50,7 +61,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card key={index} className="bg-portfolio-card border-none shadow-lg card-hover overflow-hidden">
               <div className="h-3 bg-gradient-to-r from-portfolio-cyan to-portfolio-pink"></div>
-              <CardContent className="p-6 pb-0">
+              <CardContent className="p-6 pb-2">
                 <div className="text-4xl mb-4">
                   {project.icon}
                 </div>
@@ -58,13 +69,23 @@ const Projects = () => {
                 <p className="text-portfolio-muted mb-4">{project.description}</p>
                 
                 {project.details && (
+                  <button 
+                    onClick={() => toggleProjectDetails(index)} 
+                    className="flex items-center gap-2 text-portfolio-cyan hover:text-portfolio-cyanLight transition-colors mb-2"
+                  >
+                    <span>{expandedProjects.includes(index) ? 'Hide Details' : 'Show Details'}</span>
+                    {expandedProjects.includes(index) ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  </button>
+                )}
+                
+                {expandedProjects.includes(index) && project.details && (
                   <div className="mt-4 text-sm text-portfolio-muted">
                     <h4 className="font-semibold text-portfolio-cyan mb-2">Project Details:</h4>
-                    <p className="text-portfolio-muted text-sm leading-relaxed">{project.details}</p>
+                    <p className="text-portfolio-muted text-sm leading-relaxed mb-4">{project.details}</p>
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="p-6 pt-4">
+              <CardFooter className="p-6 pt-2">
                 <div className="flex flex-wrap gap-2 mt-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span key={tagIndex} className="bg-portfolio-background/50 px-3 py-1 rounded-full text-xs font-medium text-zinc-300">
