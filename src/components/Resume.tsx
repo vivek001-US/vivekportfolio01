@@ -1,8 +1,6 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Briefcase, GraduationCap, Award, Download } from 'lucide-react';
-
 const Resume = () => {
   // Experience data
   const experiences = [{
@@ -61,11 +59,9 @@ const Resume = () => {
     issuer: "React Training",
     year: "2022"
   }];
-  
   const handleDownloadResume = () => {
     window.open('https://drive.google.com/file/d/1dfYuRMjA_C9yLEP4t88ZYavheuJWJrAP/view?usp=sharing', '_blank');
   };
-  
   return <section id="resume" className="py-20 bg-portfolio-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -73,63 +69,22 @@ const Resume = () => {
           <p className="text-portfolio-muted max-w-2xl mx-auto">
             My professional journey, skills, and qualifications.
           </p>
-          <Button 
-            className="mt-6 bg-portfolio-cyan hover:bg-portfolio-cyanLight text-portfolio-background rounded-full px-6 py-2"
-            onClick={handleDownloadResume}
-          >
+          <Button className="mt-6 bg-portfolio-cyan hover:bg-portfolio-cyanLight text-portfolio-background rounded-full px-6 py-2" onClick={handleDownloadResume}>
             <Download className="mr-2 h-4 w-4" /> Download Resume
           </Button>
         </div>
 
         {/* Experience Section */}
-        <div className="mb-16">
-          <div className="flex items-center mb-8">
-            <Briefcase className="h-8 w-8 text-portfolio-cyan mr-4" />
-            <h3 className="text-2xl font-bold">Professional Experience</h3>
-          </div>
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <Card key={index} className="bg-portfolio-card border-none shadow-md">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold mb-1">{exp.title}</h4>
-                  <div className="flex justify-between mb-3">
-                    <span className="text-portfolio-cyan">{exp.company}</span>
-                    <span className="text-portfolio-muted text-sm">{exp.duration}</span>
-                  </div>
-                  <p className="text-portfolio-muted">{exp.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Education Section */}
-        <div className="mb-16">
-          <div className="flex items-center mb-8">
-            <GraduationCap className="h-8 w-8 text-portfolio-cyan mr-4" />
-            <h3 className="text-2xl font-bold">Education</h3>
-          </div>
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <Card key={index} className="bg-portfolio-card border-none shadow-md">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold mb-1">{edu.degree}</h4>
-                  <div className="flex justify-between mb-3">
-                    <span className="text-portfolio-cyan">{edu.institution}</span>
-                    <span className="text-portfolio-muted text-sm">{edu.duration}</span>
-                  </div>
-                  <p className="text-portfolio-muted">{edu.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Skills Section */}
         <div className="mb-16">
           <div className="flex items-center mb-8">
             <Award className="h-8 w-8 text-portfolio-cyan mr-4" />
-            <h3 className="text-2xl font-bold">Skills & Certifications</h3>
+            <h3 className="text-2xl font-bold">Skills </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Skills */}
@@ -151,24 +106,10 @@ const Resume = () => {
             </div>
 
             {/* Certifications */}
-            <div>
-              <h4 className="text-xl font-semibold mb-6">Certifications</h4>
-              <div className="space-y-4">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="bg-portfolio-card p-4 rounded-md">
-                    <div className="flex justify-between">
-                      <span className="font-medium">{cert.name}</span>
-                      <span className="text-portfolio-muted text-sm">{cert.year}</span>
-                    </div>
-                    <span className="text-portfolio-cyan text-sm">{cert.issuer}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
     </section>;
 };
-
 export default Resume;
