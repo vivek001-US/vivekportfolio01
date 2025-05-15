@@ -25,6 +25,19 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleResumeClick = () => {
+    // Scroll to the resume section
+    const resumeSection = document.getElementById('resume');
+    if (resumeSection) {
+      resumeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Close mobile menu if it's open
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -55,6 +68,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button 
               className="bg-portfolio-cyan hover:bg-portfolio-cyanLight text-portfolio-background font-medium rounded-full px-6"
+              onClick={handleResumeClick}
             >
               Resume
             </Button>
@@ -91,6 +105,7 @@ const Navbar = () => {
             <div className="pt-2">
               <Button 
                 className="w-full bg-portfolio-cyan hover:bg-portfolio-cyanLight text-portfolio-background rounded-full"
+                onClick={handleResumeClick}
               >
                 Resume
               </Button>
