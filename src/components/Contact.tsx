@@ -80,9 +80,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Contact Form */}
-          <Card className="lg:col-span-3 bg-portfolio-card border-none shadow-lg">
-            
-          </Card>
+          
 
           {/* Contact Info */}
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
