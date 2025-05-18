@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +23,7 @@ const Navbar = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Services', href: '#services' },
     { name: 'Resume', href: '#resume' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/contact', isPage: true },
   ];
 
   const handleResumeClick = () => {
@@ -43,20 +45,30 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <a href="#home" className="text-2xl font-bold text-portfolio-cyan font-poppins">
+          <a href="/#home" className="text-2xl font-bold text-portfolio-cyan font-poppins">
             Vivek<span className="text-portfolio-pink">.</span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300"
-              >
-                {link.name}
-              </a>
+              link.isPage ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -89,14 +101,25 @@ const Navbar = () => {
         <div className="md:hidden bg-portfolio-card shadow-lg animate-fade-in">
           <div className="px-4 pt-2 pb-4 space-y-4">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg"
-              >
-                {link.name}
-              </a>
+              link.isPage ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             <div className="pt-2">
               <Button 
