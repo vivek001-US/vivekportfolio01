@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +20,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'Home', href: isHomePage ? '#home' : '/#home' },
+    { name: 'About', href: isHomePage ? '#about' : '/#about' },
+    { name: 'Projects', href: isHomePage ? '#projects' : '/#projects' },
+    { name: 'Services', href: isHomePage ? '#services' : '/#services' },
+    { name: 'Resume', href: isHomePage ? '#resume' : '/#resume' },
     { name: 'Contact', href: '/contact', isPage: true },
   ];
 
@@ -45,9 +47,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <a href="/#home" className="text-2xl font-bold text-portfolio-cyan font-poppins">
+          <Link to="/" className="text-2xl font-bold text-portfolio-cyan font-poppins">
             Vivek<span className="text-portfolio-pink">.</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
