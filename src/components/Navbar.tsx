@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -26,11 +25,8 @@ const Navbar = () => {
   ];
 
   const handleResumeClick = () => {
-    // Scroll to the resume section
-    const resumeSection = document.getElementById('resume');
-    if (resumeSection) {
-      resumeSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Open resume in new tab
+    window.open('https://drive.google.com/file/d/1dfYuRMjA_C9yLEP4t88ZYavheuJWJrAP/view?usp=sharing', '_blank');
     
     // Close mobile menu if it's open
     if (mobileMenuOpen) {

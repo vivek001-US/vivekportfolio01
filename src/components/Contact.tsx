@@ -1,11 +1,10 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Linkedin, Phone, Github, MapPin, Code, Globe } from 'lucide-react';
+import { Mail, Linkedin, Phone, Github, MapPin, Code } from 'lucide-react';
 
 const Contact = () => {
   const {
@@ -72,12 +71,6 @@ const Contact = () => {
       title: "LeetCode",
       value: "vivekpal01",
       link: "https://leetcode.com/u/vivekpal01/"
-    },
-    {
-      icon: <Globe className="h-6 w-6" />,
-      title: "Portfolio",
-      value: "View Portfolio",
-      link: "https://vivekportfolio01.lovable.app/"
     },
     {
       icon: <Phone className="h-6 w-6" />,

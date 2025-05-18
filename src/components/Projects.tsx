@@ -99,10 +99,15 @@ const Projects = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <button className="group flex items-center gap-2 text-portfolio-cyan hover:text-portfolio-cyanLight transition-colors">
+          <a 
+            href="https://github.com/vivek001-US" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group flex items-center gap-2 text-portfolio-cyan hover:text-portfolio-cyanLight transition-colors"
+          >
             <span>See more projects on GitHub</span>
             <Code className="transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
         </div>
       </div>
     </section>
