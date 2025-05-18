@@ -65,17 +65,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Regular nav links */}
-            {navLinks.map(link => 
-              link.isPage ? (
-                <Link key={link.name} to={link.href} className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300">
-                  {link.name}
-                </Link>
-              ) : (
-                <a key={link.name} href={link.href} className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300">
-                  {link.name}
-                </a>
-              )
-            )}
+            {navLinks.map(link => (
+              <a key={link.name} href={link.href} className="text-portfolio-text hover:text-portfolio-cyan transition-colors duration-300">
+                {link.name}
+              </a>
+            ))}
             
             {/* Contact Button */}
             <Link to="/contact">
@@ -103,17 +97,11 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-portfolio-card shadow-lg animate-fade-in">
           <div className="px-4 pt-2 pb-4 space-y-4">
-            {navLinks.map(link => 
-              link.isPage ? (
-                <Link key={link.name} to={link.href} onClick={() => setMobileMenuOpen(false)} className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg">
-                  {link.name}
-                </Link>
-              ) : (
-                <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg">
-                  {link.name}
-                </a>
-              )
-            )}
+            {navLinks.map(link => (
+              <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block text-portfolio-text hover:text-portfolio-cyan py-2 text-lg">
+                {link.name}
+              </a>
+            ))}
             
             {/* Contact Button in Mobile Menu */}
             <div className="pt-2">
